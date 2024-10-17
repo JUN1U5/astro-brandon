@@ -30,7 +30,10 @@ const { align = 'center', tagline, title } = Astro.props;
 
 	.title {
 		font-size: var(--text-3xl);
-		color: var(--gray-0);
+		background: -webkit-linear-gradient(150deg,var(--accent-light), var(--gray-0));
+		-webkit-background-clip:text;
+		-webkit-text-fill-color: transparent;
+		padding:6px 0px;
 	}
 
 	@media (min-width: 50em) {
@@ -49,6 +52,7 @@ const { align = 'center', tagline, title } = Astro.props;
 
 		.title {
 			font-size: var(--text-5xl);
+			color: var(--gray-0);
 		}
 	}
 </style>
