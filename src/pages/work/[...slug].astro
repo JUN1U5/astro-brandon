@@ -8,6 +8,8 @@ import Hero from '../../components/Hero.astro';
 import Icon from '../../components/Icon.astro';
 import Pill from '../../components/Pill.astro';
 
+// import { render } from 'astro:content';
+
 interface Props {
 	entry: CollectionEntry<'work'>;
 }
@@ -18,13 +20,14 @@ interface Props {
 export async function getStaticPaths() {
 	const work = await getCollection('work');
 	return work.map((entry) => ({
-		params: { slug: entry.slug },
+		params: { slug: entry.id },
 		props: { entry },
 	}));
 }
 
 const { entry } = Astro.props;
-const { Content } = await entry.render();
+// const { Content } = await entry.render();
+
 ---
 
 <BaseLayout title={entry.data.title} description={entry.data.description}>
@@ -47,7 +50,7 @@ const { Content } = await entry.render();
 				<div class="stack gap-10 content">
 					{entry.data.img && <img src={entry.data.img} alt={entry.data.img_alt || ''} />}
 					<div class="content">
-						<Content />
+						<work />
 					</div>
 				</div>
 			</main>
