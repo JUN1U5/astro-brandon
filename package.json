@@ -2,7 +2,7 @@
   "name": "grubby-graham",
   "type": "module",
   "version": "0.0.1",
-    "engines": {
+  "engines": {
     "node": "24.x"
   },
   "scripts": {
@@ -13,8 +13,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.9",
-    "astro": "^7.0.6",
+    "@astrojs/check": "^0.9.12",
+    "astro": "^7.4.10",
     "typescript": "^5.6.3"
   }
 }

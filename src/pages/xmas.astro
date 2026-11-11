@@ -1,0 +1,110 @@
+---
+---
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🎄 Random Xmas Episode Picker 🎄</title>
+  </head>
+  <body>
+<main class="container">
+  <h1>🎄 Random Xmas Episode Picker 🎄</h1>
+  <p>Click the button to get a random episode.</p>
+
+  <section id="episode-card" class="card">
+    <p>Loading episodes...</p>
+  </section>
+
+  <button id="random-btn">Pick Another Episode</button>
+</main>
+</body>
+</html>
+<script>
+  import "../scripts/xmas-picker";
+</script>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f7fb;
+  color: #1f2937;
+}
+
+.container {
+  max-width: 700px;
+  margin: 60px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  color: #6b7280;
+  margin-bottom: 30px;
+}
+
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  min-height: 250px;
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card h2 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  color: #111827;
+}
+
+.field {
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+.label {
+  font-weight: bold;
+  color: #374151;
+}
+
+.loading,
+.error {
+  text-align: center;
+  color: #6b7280;
+}
+
+button {
+  margin-top: 24px;
+  background: #00664b;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 14px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #3c7e66;
+}
+
+:global(.stars) {
+  color: #f5b301;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+}
+</style>
