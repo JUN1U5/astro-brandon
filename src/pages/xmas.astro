@@ -9,13 +9,23 @@
   <body>
 <main class="container">
   <h1>🎄 Random Xmas Episode Picker 🎄</h1>
-  <p>Click the button to get a random episode.</p>
+  <p>Click the button to get three random episodes.</p>
 
-  <section id="episode-card" class="card">
-    <p>Loading episodes...</p>
-  </section>
+<section class="controls">
+  <button id="reroll-btn" type="button">Shuffle again</button>
+</section>
 
-  <button id="random-btn">Pick Another Episode</button>
+<section id="episode-cards" class="card-grid">
+  <p>Loading episodes...</p>
+</section>
+
+<section class="watched-section">
+  <h2>Watched Episodes</h2>
+  <div id="watched-list">
+    <p>No watched episodes yet.</p>
+  </div>
+</section>
+
 </main>
 </body>
 </html>
@@ -107,4 +117,83 @@ button:hover {
   font-size: 1.1rem;
   letter-spacing: 1px;
 }
+
+.controls {
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+:global(.card-grid) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+:global(.card) {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+:global(.watch-btn) {
+  margin-top: 18px;
+  background: #374151;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+:global(.watch-btn:hover) {
+  background: #1f2937;
+}
+
+:global(.empty-state) {
+  text-align: center;
+  padding: 32px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.watched-section {
+  max-width: 960px;
+  margin: 40px auto 0;
+  text-align: left;
+}
+
+.watched-section h2 {
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+:global(.watched-items) {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+}
+
+:global(.watched-item) {
+  padding: 10px 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+:global(.watched-item:last-child) {
+  border-bottom: none;
+}
+
 </style>
